@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 import { onAuthStateChanged } from "firebase/auth"
 import { auth } from "@/lib/firebase"
 
-export function ProtectedRoute({ children }: { children: React.ReactNode }) {
+export function ProtectedRoute({ children }) {
   const navigate = useNavigate()
 
   useEffect(() => {

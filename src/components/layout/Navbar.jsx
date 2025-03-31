@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, Shield, History as HistoryIcon, Settings, LogOut, Home } from 'lucide-react';
+import { Menu, X, ChevronDown, Shield, History as HistoryIcon, Settings, LogOut } from 'lucide-react';
 import { signOut } from 'firebase/auth';
-import { auth } from '../lib/firebase';
+import { auth } from '@/lib/firebase';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,11 +43,9 @@ const Navbar = () => {
   };
 
   const navLinks = [
-   
     { name: 'בקרה', path: '/control', icon: <Shield size={18} /> },
     { name: 'היסטוריה', path: '/history', icon: <HistoryIcon size={18} /> },
     { name: 'מערכת', path: '/System', icon: <Settings size={18} /> },
-    
   ];
 
   return (
@@ -170,4 +168,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Navbar; 

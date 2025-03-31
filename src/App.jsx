@@ -1,9 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import { ProtectedRoute } from "./components/protected-route"
+import { ProtectedRoute } from "./components/ProtectedRoute"
 import Login from "./pages/Login"
 import TankControl from "./pages/TankControl"
 import History from "./pages/History"
 import TankExplanation from "./pages/TankExplanation"
+
 import"./index.css"
 
 
@@ -39,6 +40,10 @@ function App() {
           </ProtectedRoute>
         }
         />
+        
+        
+        
+        
       </Routes>
       
     </BrowserRouter>

@@ -196,18 +196,7 @@ export const TankExplanation = () => {
         </div>
       ),
     },
-    {
-      title: "Radar System",
-      icon: <Radio className="h-6 w-6" />,
-      description: "Displays nearby obstacles in real-time.",
-      content: (
-        <div className="w-full aspect-square bg-slate-900 rounded-full relative overflow-hidden border border-blue-500/20">
-          <div className="absolute inset-0 flex items-center justify-center text-gray-400">
-            Radar Placeholder
-          </div>
-        </div>
-      ),
-    },
+   
     {
       title: "Camera System",
       icon: <Camera className="h-6 w-6" />,
@@ -247,9 +236,9 @@ export const TankExplanation = () => {
       <Navbar />
       <div className="min-h-screen bg-slate-950 py-8">
         <div className="container mx-auto px-4 max-w-7xl">
-          <h1 className="text-3xl font-bold text-center mb-8 text-white">Tank Control System</h1>
+          <h1 className="text-3xl font-bold text-center mb-8 mt-8 text-white">Tank Control System</h1>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-8">
             {features.map((feature, idx) => (
               <div
                 key={feature.title}
@@ -294,7 +283,11 @@ export const TankExplanation = () => {
               className="bg-blue-500 hover:bg-blue-600 text-white border-blue-500/20"
             >
               <NavLink to="/control">Go to Control Page</NavLink>
+             
             </Button>
+           
+             
+            
           </div>
         </div>
       </div>
