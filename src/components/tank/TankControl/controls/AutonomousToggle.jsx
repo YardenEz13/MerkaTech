@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch } from '@/components/ui/switch';
 import { getDatabase, ref, update } from 'firebase/database';
 
-const AutonomousToggle = ({ isAutonomous, onToggle }) => {
+export const AutonomousToggle = ({ isAutonomous, onToggle }) => {
   const handleAutonomousToggle = () => {
     const newMode = !isAutonomous;
     onToggle(newMode);
@@ -22,6 +22,4 @@ const AutonomousToggle = ({ isAutonomous, onToggle }) => {
       />
     </div>
   );
-};
-
-export default AutonomousToggle; 
+}; 

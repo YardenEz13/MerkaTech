@@ -31,8 +31,7 @@ export default function Login() {
       {/* Overlay with gradient */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/30 z-10"></div>
       
-      {/* Animated particles/dust effect */}
-      <div className="absolute inset-0 z-10 opacity-30 bg-[url('/photos-videos/noise.png')] bg-repeat"></div>
+      
 
       {/* Login Form Container */}
       <div className={`relative z-20 flex h-screen w-full flex-col items-center justify-center p-4 sm:p-6 transition-opacity duration-1000 ${loaded ? 'opacity-100' : 'opacity-0'}`}>
@@ -63,20 +62,3 @@ export default function Login() {
   )
 }
 
-// Add these animations to your global CSS
-const styles = `
-@keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-in-up {
-  animation: fade-in-up 0.5s ease-out forwards;
-}
-`;

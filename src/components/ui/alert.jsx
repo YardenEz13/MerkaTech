@@ -1,5 +1,5 @@
-import * as React from "react"
-import { cva, type VariantProps } from "class-variance-authority"
+import React from "react"
+import { cva } from "class-variance-authority"
 import { X, AlertCircle, CheckCircle, AlertTriangle, Info } from "lucide-react"
 
 import { cn } from "@/lib/utils"
@@ -30,13 +30,7 @@ const alertVariants = cva(
   }
 )
 
-interface AlertProps extends React.ComponentProps<"div">, VariantProps<typeof alertVariants> {
-  dismissible?: boolean
-  onDismiss?: () => void
-  icon?: React.ReactNode
-}
-
-const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
+const Alert = React.forwardRef(
   ({ className, variant, dismissible = false, onDismiss, icon, children, ...props }, ref) => {
     // Default icons based on variant
     const getDefaultIcon = () => {
@@ -82,40 +76,38 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
 )
 Alert.displayName = "Alert"
 
-const AlertTitle = React.forwardRef<
-  HTMLDivElement, 
-  React.ComponentProps<"div">
->(({ className, ...props }, ref) => {
-  return (
-    <div
-      ref={ref}
-      data-slot="alert-title"
-      className={cn(
-        "col-start-2 row-start-1 font-semibold leading-none tracking-tight mb-1.5",
-        className
-      )}
-      {...props}
-    />
-  )
-})
+const AlertTitle = React.forwardRef(
+  ({ className, ...props }, ref) => {
+    return (
+      <div
+        ref={ref}
+        data-slot="alert-title"
+        className={cn(
+          "col-start-2 row-start-1 font-semibold leading-none tracking-tight mb-1.5",
+          className
+        )}
+        {...props}
+      />
+    )
+  }
+)
 AlertTitle.displayName = "AlertTitle"
 
-const AlertDescription = React.forwardRef<
-  HTMLDivElement, 
-  React.ComponentProps<"div">
->(({ className, ...props }, ref) => {
-  return (
-    <div
-      ref={ref}
-      data-slot="alert-description"
-      className={cn(
-        "col-start-2 grid justify-items-start text-sm [&_p]:leading-relaxed",
-        className
-      )}
-      {...props}
-    />
-  )
-})
+const AlertDescription = React.forwardRef(
+  ({ className, ...props }, ref) => {
+    return (
+      <div
+        ref={ref}
+        data-slot="alert-description"
+        className={cn(
+          "col-start-2 grid justify-items-start text-sm [&_p]:leading-relaxed",
+          className
+        )}
+        {...props}
+      />
+    )
+  }
+)
 AlertDescription.displayName = "AlertDescription"
 
 export { Alert, AlertTitle, AlertDescription }

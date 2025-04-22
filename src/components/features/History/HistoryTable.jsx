@@ -1,7 +1,8 @@
 import React from 'react';
 import { CalendarIcon, ClockIcon } from 'lucide-react';
+import { formatDate } from '@/utils/dateUtils';
 
-const HistoryTable = ({ data, onRowClick, selectedEventId, formatDate }) => {
+const HistoryTable = ({ data, onRowClick, selectedEventId }) => {
   if (!data || data.length === 0) {
     return (
       <div className="bg-slate-800/50 backdrop-blur-sm rounded-lg p-8 text-center border border-slate-700/50">

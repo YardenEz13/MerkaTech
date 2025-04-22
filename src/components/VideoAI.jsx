@@ -12,7 +12,7 @@ export default function VideoAI({ cameraStreamUrl, capturedBase64Image, triggerA
   const imageRef = useRef(null);
   const prevTriggerRef = useRef(false);
 
-  // Update class names according to your model
+ 
   const classNames = ["IDF", "ENEMY"];
 
   // Load the model

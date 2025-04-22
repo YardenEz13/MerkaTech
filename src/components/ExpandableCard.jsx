@@ -1,7 +1,7 @@
 import React from 'react';
 import { X, Calendar, MapPin, Clock, AlertTriangle, CheckCircle, Info } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '@/components/ui/card';
-
+import { Button } from '@/components/ui/button';
 const ExpandableCard = ({ isOpen, onClose, card, id }) => {
   if (!isOpen || !card) return null;
 
@@ -27,13 +27,13 @@ const ExpandableCard = ({ isOpen, onClose, card, id }) => {
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-fade-in">
       <Card id={id} className="w-full max-w-2xl max-h-[90vh] overflow-auto bg-slate-900 border-slate-700 text-white shadow-2xl animate-fade-in-up">
         <CardHeader className="relative bg-gradient-to-r from-slate-800 to-slate-900 border-b border-slate-700">
-          <button
+          <Button
             onClick={onClose}
             className="absolute top-3 right-3 p-1 rounded-full bg-slate-700/50 hover:bg-slate-700 text-gray-300 hover:text-white transition-colors"
             aria-label="סגור"
           >
             <X className="h-5 w-5" />
-          </button>
+          </Button>
           
           <div className="flex items-center gap-2 mb-1">
             {getStatusIcon()}
