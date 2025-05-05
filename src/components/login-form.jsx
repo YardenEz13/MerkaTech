@@ -105,7 +105,7 @@ export function LoginForm({ className }) {
         variant="success" 
         className="py-2 px-3 border-green-400/20 dark:border-green-700/30 content-center"
       >
-        <AlertDescription className="text-xs">{success}</AlertDescription>
+        <AlertDescription className="text-xs rtl">{success}</AlertDescription>
       </Alert>
     )}
 

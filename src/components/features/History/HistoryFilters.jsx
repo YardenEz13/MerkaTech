@@ -19,14 +19,8 @@ const HistoryFilters = ({ searchTerm, setSearchTerm, handleRefresh }) => {
         />
       </div>
       
-      {/* Refresh button */}
-      <Button
-        onClick={handleRefresh}
-        variant="outline"
-        className="bg-slate-800 border-slate-700 text-white hover:bg-slate-700"
-      >
-        רענן נתונים
-      </Button>
+   
+      
     </div>
   );
 };

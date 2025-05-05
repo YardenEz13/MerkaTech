@@ -500,12 +500,7 @@
   syntax: "*";
   inherits: false;
 }
-/*---break--- */
-/*---break--- */
-/*---break--- */
-/*---break--- */
 
-/* Custom Animations */
 @keyframes fade-in-up {
   from {
     opacity: 0;

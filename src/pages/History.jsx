@@ -3,7 +3,7 @@ import { useHistoryData } from '@/hooks/useHistoryData';
 import Navbar from '@/components/Navbar';
 import HistoryFilters from '@/components/features/History/HistoryFilters';
 import HistoryTable from '@/components/features/History/HistoryTable';
-import EmptyState from '@/components/common/EmptyState';
+import LoadingSpinner from '@/components/common/LoadingSpinner';
 import StatusIndicator from '@/components/common/StatusIndicator';
 import ExpandableCard from '@/components/ExpandableCard';
 
@@ -60,16 +60,7 @@ const History = () => {
             <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
           </div>
         ) : filteredData.length === 0 ? (
-          <EmptyState
-            title={searchTerm ? 'לא נמצאו תוצאות' : 'אין אירועים להצגה'}
-            description={searchTerm 
-              ? `לא נמצאו אירועים התואמים את החיפוש "${searchTerm}"`
-              : 'לא נמצאו אירועים בהיסטוריה'}
-            action={searchTerm ? {
-              onClick: () => setSearchTerm(''),
-              label: 'נקה חיפוש'
-            } : null}
-          />
+          <LoadingSpinner/>
         ) : (
           <HistoryTable 
             data={filteredData}

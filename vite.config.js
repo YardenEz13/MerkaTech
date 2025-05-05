@@ -29,23 +29,11 @@ export default defineConfig({
     "process.env": {}
   },
 
-  optimizeDeps: {
-    include: [
-      "react",
-      "react-dom",
-      "@tensorflow/tfjs",
-      "@teachablemachine/image",
-      "framer-motion",
-      "@radix-ui/react-primitive",
-      "@radix-ui/react-context",
-      "@radix-ui/react-compose-refs",
-      "lucide-react"
-    ],
-  },
+  
 
   build: {
-    commonjsOptions: {
-      include: [/@tensorflow\/tfjs/, /@teachablemachine\/image/],
-    },
+   // commonjsOptions: {
+     // include: [/@tensorflow\/tfjs/, /@teachablemachine\/image/],
+    //},
   },
 })

@@ -74,14 +74,14 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="flex items-center space-x-4 rtl:space-x-reverse">
+            <div className="flex space-x-4 rtl:space-x-reverse">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`flex items-center px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                  className={`flex px-3 py-2  rounded-md text-sm font-medium transition-colors duration-200 ${
                     isActive(link.path)
-                      ? 'bg-blue-600 text-white'
+                      ? 'text-gray-300 hover:bg-slate-800 hover:text-white'
                       : 'text-gray-300 hover:bg-slate-800 hover:text-white'
                   }`}
                 >

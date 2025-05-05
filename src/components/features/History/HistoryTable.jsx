@@ -34,12 +34,12 @@ const HistoryTable = ({ data, onRowClick, selectedEventId }) => {
                   <td className="px-6 py-4 text-right whitespace-nowrap">
                     <div className="flex flex-col">
                       <div className="flex items-center text-sm font-medium text-gray-200">
-                        <CalendarIcon className="h-4 w-4 ml-2 text-blue-400" />
+                        <CalendarIcon className="h-4 w-4 ml-2 text-blue-400 mr-2" />
                         {datePart}
                       </div>
                       {timePart && (
                         <div className="flex items-center text-xs text-gray-400 mt-1">
-                          <ClockIcon className="h-3 w-3 ml-2 text-blue-400" />
+                          <ClockIcon className="h-3 w-3 ml-2 text-blue-400 mr-2" />
                           {timePart}
                         </div>
                       )}

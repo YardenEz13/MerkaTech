@@ -6,35 +6,33 @@ import { AutonomousToggle } from './controls/AutonomousToggle';
 import { DistanceIndicator } from './indicators/DistanceIndicator';
 import { useTankState } from '@/hooks/tank/useTankState';
 
-const TankControl = () => {
-  const {
-    isAutonomous,
-    setIsAutonomous,
+const TankControl = ({ videoRef }) => {
+  const { 
+    distance,
     canShoot,
-    distance
+    isAutonomous,
+    setIsAutonomous
   } = useTankState();
 
   return (
-    <Card className="bg-slate-900 border-slate-800">
+    <Card className="w-full">
       <CardContent className="p-6">
-        <div className="flex flex-col h-full space-y-6">
-          {/* Top Row - Fire Control */}
-          <div className="flex justify-start">
-            <FireControl canShoot={canShoot} />
-          </div>
-
-          {/* Middle Row - Joystick */}
-          <div className="flex-1 flex items-center justify-center">
-            <JoystickControl isAutonomous={isAutonomous} />
-          </div>
-
-          {/* Bottom Row - Mode Toggle and Distance */}
+        <div className="space-y-6">
           <div className="flex items-center justify-between">
-            <AutonomousToggle 
-              isAutonomous={isAutonomous} 
-              onToggle={setIsAutonomous} 
-            />
             <DistanceIndicator distance={distance} />
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <JoystickControl isAutonomous={isAutonomous} />
+            <div className="space-y-4">
+              <FireControl 
+                canShoot={canShoot} 
+                videoRef={videoRef}
+              />
+              <AutonomousToggle 
+                isAutonomous={isAutonomous}
+                onToggle={setIsAutonomous}
+              />
+            </div>
           </div>
         </div>
       </CardContent>
